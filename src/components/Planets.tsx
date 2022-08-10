@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import loading from "../assets/loading.gif";
 import PlanetCard from "./PlanetCard";
 export default function Planets() {
-  const fetchPlanetsData = async (): Promise<{}[]> => {
+  const fetchPlanetsData = async () => {
     const options = {
       method: "GET",
       headers: {
@@ -15,7 +15,7 @@ export default function Planets() {
       "https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list",
       options
     );
-    const data: {}[] = await res.json();
+    const data = await res.json();
     // console.log(data);
     return data.slice(1, 8);
   };
@@ -37,9 +37,19 @@ export default function Planets() {
   return (
     <>
       <>
-        {data.map((data) => (
-          <PlanetCard data={data} />
-        ))}
+        {data.map(
+          (data: {
+            basicDetails: [{ mass: string; volume: string }];
+            description: string;
+            id: number;
+            name: string;
+            imgSrc: [{ img: string; imgDescription: string }];
+            planetOrder: string;
+            source: string;
+          }) => (
+            <PlanetCard data={data} />
+          )
+        )}
       </>
     </>
   );
