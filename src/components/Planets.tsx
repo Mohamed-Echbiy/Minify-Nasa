@@ -16,7 +16,6 @@ export default function Planets() {
       options
     );
     const data = await res.json();
-    // console.log(data);
     return data.slice(1, 8);
   };
 
@@ -25,7 +24,6 @@ export default function Planets() {
     fetchPlanetsData
   );
 
-  console.log(data);
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center bg-white">

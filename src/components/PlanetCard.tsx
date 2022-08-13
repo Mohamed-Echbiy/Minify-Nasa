@@ -1,6 +1,6 @@
-import { keyframes } from "@emotion/react";
-import React from "react";
 import styled from "styled-components";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+import "animate.css/animate.min.css";
 interface data {
   data: {
     basicDetails: [{ mass: string; volume: string }];
@@ -12,19 +12,33 @@ interface data {
     source: string;
   };
 }
+
 export default function PlanetCard(data: data) {
-  console.log(data.data);
   return (
     <>
       <Div className="Planet h-screen w-full">
-        <div className="Planet_image_container mr-3">
+        <AnimationOnScroll
+          animateIn="animate__rollIn"
+          offset={390}
+          initiallyVisible={data.data.name === "Jupiter" ? true : false}
+          className="Planet_image_container mr-3"
+        >
           <img
             src={data.data.imgSrc[0].img}
             alt={data.data.imgSrc[0].imgDescription}
-            className="Planet_image"
+            className={`PLanet_image `}
           />
-        </div>
-        <div className="Planet_info_container">
+        </AnimationOnScroll>
+
+        <AnimationOnScroll
+          animateIn="animate__slideInRight"
+          offset={200}
+          initiallyVisible={data.data.name === "Jupiter" ? true : false}
+          duration={1}
+          // animatePreScroll={false}
+          // animateOnce={true}
+          className="Planet_info_container"
+        >
           <h1 className="Planet_title text-white uppercase tracking-wide pb-4 ">
             {[...data.data.name].map((e) => (
               <span> {e} </span>
@@ -45,11 +59,12 @@ export default function PlanetCard(data: data) {
               </p>
             </div>
           </p>
-        </div>
+        </AnimationOnScroll>
       </Div>
     </>
   );
 }
+
 //  styling
 const Div = styled.div`
   &.Planet {
@@ -64,6 +79,7 @@ const Div = styled.div`
       }
     }
     .Planet_info_container {
+      /* transform: translateX(795px); */
       width: 48%;
       min-width: 280px;
       display: flex;
@@ -118,6 +134,7 @@ const Div = styled.div`
         }
       }
     }
+
     @media (max-width: 830px) {
       flex-direction: column;
       justify-content: center;

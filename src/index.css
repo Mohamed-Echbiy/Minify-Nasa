@@ -57,35 +57,17 @@ body {
   }
 }
 
-@keyframes Animation_title {
-  0% {
-    transform: translateX(795px);
-    -webkit-transform: translateX(795px);
-    -moz-transform: translateX(795px);
-    -ms-transform: translateX(795px);
-    -o-transform: translateX(795px);
-  }
-  100% {
-    transform: translateX(0px);
-    -webkit-transform: translateX(0px);
-    -moz-transform: translateX(0px);
-    -ms-transform: translateX(0px);
-    -o-transform: translateX(0px);
-  }
+.visible {
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
 }
-
-.Planet_title {
-  background-color: black;
-  animation: Animation_title 0.4s ease;
-  -webkit-animation: Animation_title 0.4s ease;
-  animation-play-state: paused;
-}
-.Planet:hover .Planet_title {
-  animation-play-state: running;
-}
-@media (max-width: 1200px) {
-  .Planet_title {
-    animation: none;
-    -webkit-animation: none;
-  }
+.notVisible {
+  transform: translateX(-1000px);
+  -webkit-transform: translateX(-1000px);
+  -moz-transform: translateX(-1000px);
+  -ms-transform: translateX(-1000px);
+  -o-transform: translateX(-1000px);
 }
