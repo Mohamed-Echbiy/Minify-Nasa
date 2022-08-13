@@ -56,18 +56,3 @@ body {
     font-size: 18px;
   }
 }
-
-.visible {
-  transform: translateX(0px);
-  -webkit-transform: translateX(0px);
-  -moz-transform: translateX(0px);
-  -ms-transform: translateX(0px);
-  -o-transform: translateX(0px);
-}
-.notVisible {
-  transform: translateX(-1000px);
-  -webkit-transform: translateX(-1000px);
-  -moz-transform: translateX(-1000px);
-  -ms-transform: translateX(-1000px);
-  -o-transform: translateX(-1000px);
-}
