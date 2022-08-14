@@ -56,6 +56,7 @@ export default function PlanetCard(data: data) {
   const [Q2, setQ2] = useState(null);
   const [Q3, setQ3] = useState(null);
   const [Q4, setQ4] = useState(null);
+  const [disablity, setDisable] = useState(false);
 
   function HandlechangeQ1(e: ChangeEvent<HTMLInputElement>) {
     setQ1((e.target as HTMLInputElement).value);
@@ -85,9 +86,9 @@ export default function PlanetCard(data: data) {
     if (typeof Q3 === typeof "string") {
       if (Q3 === quizedata.A3) {
         setScore((p) => p + 25);
-        return Q4Score();
+        Q4Score();
       } else {
-        return Q4Score();
+        Q4Score();
       }
     } else {
       return window.alert("please select your 3 answer");
@@ -98,9 +99,9 @@ export default function PlanetCard(data: data) {
     if (typeof Q2 === typeof "string") {
       if (Q2 === quizedata.A2) {
         setScore((p) => p + 25);
-        return Q3Score();
+        Q3Score();
       } else {
-        return Q3Score();
+        Q3Score();
       }
     } else {
       return window.alert("please select your 2 answer");
@@ -121,6 +122,8 @@ export default function PlanetCard(data: data) {
     } else {
       return window.alert("please select your first answer");
     }
+    setAnswersRiveal(true);
+    setDisable(true);
   }
   return (
     <>
@@ -181,6 +184,12 @@ export default function PlanetCard(data: data) {
         {popUpState && (
           <div className="popup_box_overlay">
             <div className="box">
+              <span
+                className="close_btn text-black"
+                onClick={() => setPopUpState(false)}
+              >
+                x
+              </span>
               <h2 className=" mb-5 font-semibold">{quizedata.planet}</h2>
               <div className="first_Q">
                 <h3 className=" text-lg mb-5">Q1: {quizedata.Q1}</h3>
@@ -371,10 +380,19 @@ export default function PlanetCard(data: data) {
                   <p>Answer is: {quizedata.A4} </p>
                 </div>
                 <button
-                  className=" p-2 mt-2 ml-2 rounded-md bg-gray-900"
+                  className={`p-2 mt-2 ml-2 rounded-md bg-gray-900 text-gray-50 ${
+                    disablity === true && "pointer-events-none"
+                  }`}
                   onClick={result}
                 >
                   submit
+                </button>
+                <button
+                  className={`cursor-pointer p-2 mt-2 ml-2 rounded-md bg-gray-900 text-gray-50 ${
+                    disablity !== true ? "hidden" : "visible"
+                  }`}
+                >
+                  reload
                 </button>
               </div>
               <h1 className="text-black p-3 text-lg font-semibold ">
@@ -390,9 +408,6 @@ export default function PlanetCard(data: data) {
                 }`}
               </h1>
             </div>
-            <span className="close_btn" onClick={() => setPopUpState(false)}>
-              x
-            </span>
           </div>
         )}
       </Div>
@@ -488,21 +503,21 @@ const Div = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      span.close_btn {
-        display: block;
-        position: absolute;
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-        left: 20px;
-        top: 30px;
-      }
       .box {
         background-color: white;
         padding: 20px;
         height: fit-content;
         min-width: 320px;
         border-radius: 20px;
+        position: relative;
+        span.close_btn {
+          display: block;
+          position: absolute;
+          font-size: 30px;
+          cursor: pointer;
+          left: 20px;
+          top: 1px;
+        }
         h2 {
           font-size: 20px;
           text-transform: uppercase;
@@ -523,7 +538,7 @@ const Div = styled.div`
         .answer {
           padding: 10px;
           text-align: center;
-          background-color: #10b31090;
+          background-color: #b1a00c90;
           font-weight: bold;
           color: #070707b9;
         }

@@ -34,21 +34,19 @@ export default function Planets() {
 
   return (
     <>
-      <>
-        {data.map(
-          (data: {
-            basicDetails: [{ mass: string; volume: string }];
-            description: string;
-            id: number;
-            name: string;
-            imgSrc: [{ img: string; imgDescription: string }];
-            planetOrder: string;
-            source: string;
-          }) => (
-            <PlanetCard data={data} key={data.name} />
-          )
-        )}
-      </>
+      {data.map(
+        (data: {
+          basicDetails: [{ mass: string; volume: string }];
+          description: string;
+          id: number;
+          name: string;
+          imgSrc: [{ img: string; imgDescription: string }];
+          planetOrder: string;
+          source: string;
+        }) => (
+          <PlanetCard data={data} key={data.name} />
+        )
+      )}
     </>
   );
 }

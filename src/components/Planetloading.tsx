@@ -1,10 +1,6 @@
-import React from "react";
 import Skeleton from "@mui/material/Skeleton";
 import styled from "styled-components";
 
-interface types {
-  Skeleton: React.ElementType;
-}
 export default function Planetloading() {
   return (
     <Div className="Container ">
