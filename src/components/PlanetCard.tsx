@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
-import { useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import quizes from "../assets/quize.json";
 interface data {
   data: {
@@ -57,21 +57,19 @@ export default function PlanetCard(data: data) {
   const [Q3, setQ3] = useState(null);
   const [Q4, setQ4] = useState(null);
 
-  function HandlechangeQ1(e: React.MouseEvent<HTMLInputElement>) {
+  function HandlechangeQ1(e: ChangeEvent<HTMLInputElement>) {
     setQ1((e.target as HTMLInputElement).value);
   }
-  function HandlechangeQ2(e: React.MouseEvent<HTMLInputElement>) {
+  function HandlechangeQ2(e: ChangeEvent<HTMLInputElement>) {
     setQ2((e.target as HTMLInputElement).value);
   }
-  function HandlechangeQ3(e: React.MouseEvent<HTMLInputElement>) {
+  function HandlechangeQ3(e: ChangeEvent<HTMLInputElement>) {
     setQ3((e.target as HTMLInputElement).value);
   }
-  function HandlechangeQ4(e: React.MouseEvent<HTMLInputElement>) {
+  function HandlechangeQ4(e: ChangeEvent<HTMLInputElement>) {
     setQ4((e.target as HTMLInputElement).value);
   }
   const [score, setScore] = useState(0);
-
-  //! evaluation of the score and the answers logic
 
   function Q4Score() {
     if (typeof Q4 === typeof "string") {
@@ -109,7 +107,8 @@ export default function PlanetCard(data: data) {
     }
   }
 
-  function result(e) {
+  //! evaluation of the score and the answers logic
+  function result(e: { preventDefault: () => void }) {
     e.preventDefault();
     setScore(0);
     if (typeof Q1 === typeof "string") {
