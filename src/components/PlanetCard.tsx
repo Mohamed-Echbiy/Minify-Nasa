@@ -226,11 +226,6 @@ export default function PlanetCard(data: data) {
                     <label htmlFor="Q1S3"> {quizedata.Q1_S3} </label>
                   </div>
                 </div>
-                <div
-                  className={`answer ${
-                    ansewrsRiveal === true ? "visible" : "hidden"
-                  }`}
-                ></div>
               </div>
               <div className="seconde_Q">
                 <h3 className=" text-lg mb-5">Q2: {quizedata.Q2}</h3>
@@ -269,11 +264,6 @@ export default function PlanetCard(data: data) {
                     </div>
                   )}
                 </div>
-                <div
-                  className={`answer ${
-                    ansewrsRiveal === true ? "visible" : "hidden"
-                  }`}
-                ></div>
               </div>
               <div className="third_Q">
                 <h3 className=" text-lg mb-5">Q3: {quizedata.Q3}</h3>
@@ -312,11 +302,6 @@ export default function PlanetCard(data: data) {
                     </div>
                   )}
                 </div>
-                <div
-                  className={`answer ${
-                    ansewrsRiveal === true ? "visible" : "hidden"
-                  }`}
-                ></div>
               </div>
               <div className="fourth_Q">
                 <h3 className=" text-lg mb-5">Q1: {quizedata.Q4}</h3>
@@ -366,20 +351,16 @@ export default function PlanetCard(data: data) {
                     </div>
                   )}
                 </div>
-                <div
-                  className={`answer ${
-                    ansewrsRiveal === true ? "visible" : "hidden"
-                  }`}
-                ></div>
+
                 <button
                   className={`p-2 mt-2 ml-2 rounded-md bg-gray-900 text-gray-50 ${
-                    disablity === true && "pointer-events-none hidden"
+                    disablity === true && "pointer-events-none"
                   }`}
                   onClick={result}
                 >
                   submit
                 </button>
-                <button
+                {/* <button
                   className={`cursor-pointer p-2 mt-2 ml-2 rounded-md bg-gray-900 text-gray-50 ${
                     disablity !== true ? "hidden" : "visible"
                   }`}
@@ -389,7 +370,7 @@ export default function PlanetCard(data: data) {
                   }}
                 >
                   reload
-                </button>
+                </button> */}
               </div>
               <h1 className="text-black p-3 text-lg font-semibold ">
                 Your score is :
