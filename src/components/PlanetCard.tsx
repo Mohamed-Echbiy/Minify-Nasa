@@ -193,7 +193,7 @@ export default function PlanetCard(data: data) {
               <h2 className=" mb-5 font-semibold">{quizedata.planet}</h2>
               <div className="first_Q">
                 <h3 className=" text-lg mb-5">Q1: {quizedata.Q1}</h3>
-                <div className="choose_box mb-5">
+                <div className="choose_box mb-1">
                   <div className="mb-1">
                     <input
                       type="radio"
@@ -236,7 +236,7 @@ export default function PlanetCard(data: data) {
               </div>
               <div className="seconde_Q">
                 <h3 className=" text-lg mb-5">Q2: {quizedata.Q2}</h3>
-                <div className="choose_box mb-5">
+                <div className="choose_box mb-1">
                   <div className="mb-1">
                     <input
                       type="radio"
@@ -281,7 +281,7 @@ export default function PlanetCard(data: data) {
               </div>
               <div className="third_Q">
                 <h3 className=" text-lg mb-5">Q3: {quizedata.Q3}</h3>
-                <div className="choose_box mb-5">
+                <div className="choose_box mb-1">
                   <div className="mb-1">
                     <input
                       type="radio"
@@ -326,7 +326,7 @@ export default function PlanetCard(data: data) {
               </div>
               <div className="fourth_Q">
                 <h3 className=" text-lg mb-5">Q1: {quizedata.Q4}</h3>
-                <div className="choose_box mb-5">
+                <div className="choose_box mb-3">
                   {quizedata.Q4_S1 ? (
                     <div>
                       <input
@@ -509,8 +509,8 @@ const Div = styled.div`
       align-items: center;
       .box {
         background-color: white;
-        padding: 20px;
-        height: fit-content;
+        padding: 10px;
+        min-height: fit-content;
         min-width: 320px;
         border-radius: 20px;
         position: relative;
@@ -540,11 +540,12 @@ const Div = styled.div`
           }
         }
         .answer {
-          padding: 10px;
           text-align: center;
-          background-color: #b1a00c90;
+          background-color: #0bc21490;
           font-weight: bold;
           color: #070707b9;
+          border-radius: 5px;
+          margin-bottom: 5px;
         }
       }
     }
