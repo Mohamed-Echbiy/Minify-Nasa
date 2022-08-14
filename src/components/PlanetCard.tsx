@@ -172,9 +172,7 @@ export default function PlanetCard(data: data) {
               >
                 Quick Quize
               </button>
-              <span className="p-1 mt-2">
-                last score is : {preScore.current}%
-              </span>
+              <span className="p-1 mt-2">last score is : {score}%</span>
             </div>
           </p>
         </AnimationOnScroll>
