@@ -381,7 +381,7 @@ export default function PlanetCard(data: data) {
                 </div>
                 <button
                   className={`p-2 mt-2 ml-2 rounded-md bg-gray-900 text-gray-50 ${
-                    disablity === true && "pointer-events-none"
+                    disablity === true && "pointer-events-none hidden"
                   }`}
                   onClick={result}
                 >
@@ -391,6 +391,10 @@ export default function PlanetCard(data: data) {
                   className={`cursor-pointer p-2 mt-2 ml-2 rounded-md bg-gray-900 text-gray-50 ${
                     disablity !== true ? "hidden" : "visible"
                   }`}
+                  onClick={() => {
+                    setDisable(false);
+                    setAnswersRiveal((e) => !e);
+                  }}
                 >
                   reload
                 </button>
