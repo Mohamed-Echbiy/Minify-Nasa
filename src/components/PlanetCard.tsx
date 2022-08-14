@@ -504,22 +504,22 @@ const Div = styled.div`
           border-bottom: 1px solid black;
         }
         .choose_box {
-          /* .inputAnswer {
+          .inputAnswer {
             background-color: #0000001a;
             border: 1px solid black;
             outline: none;
             padding: 0px 10px;
             border-radius: 5px;
-          } */
+          }
         }
-        .answer {
+        /* .answer {
           text-align: center;
           background-color: #0bc21490;
           font-weight: bold;
           color: #070707b9;
           border-radius: 5px;
           margin-bottom: 5px;
-        }
+        } */
       }
     }
   }
