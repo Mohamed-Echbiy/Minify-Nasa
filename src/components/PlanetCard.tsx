@@ -57,17 +57,17 @@ export default function PlanetCard(data: data) {
   const [Q3, setQ3] = useState(null);
   const [Q4, setQ4] = useState(null);
 
-  function HandlechangeQ1(e) {
-    setQ1(e.target.value);
+  function HandlechangeQ1(e: React.MouseEvent<HTMLInputElement>) {
+    setQ1((e.target as HTMLInputElement).value);
   }
-  function HandlechangeQ2(e) {
-    setQ2(e.target.value);
+  function HandlechangeQ2(e: React.MouseEvent<HTMLInputElement>) {
+    setQ2((e.target as HTMLInputElement).value);
   }
-  function HandlechangeQ3(e) {
-    setQ3(e.target.value);
+  function HandlechangeQ3(e: React.MouseEvent<HTMLInputElement>) {
+    setQ3((e.target as HTMLInputElement).value);
   }
-  function HandlechangeQ4(e) {
-    setQ4(e.target.value);
+  function HandlechangeQ4(e: React.MouseEvent<HTMLInputElement>) {
+    setQ4((e.target as HTMLInputElement).value);
   }
   const [score, setScore] = useState(0);
 
