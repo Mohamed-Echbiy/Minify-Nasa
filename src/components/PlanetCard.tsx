@@ -230,9 +230,7 @@ export default function PlanetCard(data: data) {
                   className={`answer ${
                     ansewrsRiveal === true ? "visible" : "hidden"
                   }`}
-                >
-                  <p>Answer is: {quizedata.A1} </p>
-                </div>
+                ></div>
               </div>
               <div className="seconde_Q">
                 <h3 className=" text-lg mb-5">Q2: {quizedata.Q2}</h3>
@@ -275,9 +273,7 @@ export default function PlanetCard(data: data) {
                   className={`answer ${
                     ansewrsRiveal === true ? "visible" : "hidden"
                   }`}
-                >
-                  <p>Answer is: {quizedata.A2} </p>
-                </div>
+                ></div>
               </div>
               <div className="third_Q">
                 <h3 className=" text-lg mb-5">Q3: {quizedata.Q3}</h3>
@@ -320,9 +316,7 @@ export default function PlanetCard(data: data) {
                   className={`answer ${
                     ansewrsRiveal === true ? "visible" : "hidden"
                   }`}
-                >
-                  <p>Answer is: {quizedata.A3} </p>
-                </div>
+                ></div>
               </div>
               <div className="fourth_Q">
                 <h3 className=" text-lg mb-5">Q1: {quizedata.Q4}</h3>
@@ -376,9 +370,7 @@ export default function PlanetCard(data: data) {
                   className={`answer ${
                     ansewrsRiveal === true ? "visible" : "hidden"
                   }`}
-                >
-                  <p>Answer is: {quizedata.A4} </p>
-                </div>
+                ></div>
                 <button
                   className={`p-2 mt-2 ml-2 rounded-md bg-gray-900 text-gray-50 ${
                     disablity === true && "pointer-events-none hidden"
@@ -531,13 +523,13 @@ const Div = styled.div`
           border-bottom: 1px solid black;
         }
         .choose_box {
-          .inputAnswer {
+          /* .inputAnswer {
             background-color: #0000001a;
             border: 1px solid black;
             outline: none;
             padding: 0px 10px;
             border-radius: 5px;
-          }
+          } */
         }
         .answer {
           text-align: center;
