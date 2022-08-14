@@ -45,7 +45,7 @@ export default function Planets() {
             planetOrder: string;
             source: string;
           }) => (
-            <PlanetCard data={data} />
+            <PlanetCard data={data} key={data.name} />
           )
         )}
       </>
