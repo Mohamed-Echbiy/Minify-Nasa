@@ -123,20 +123,6 @@ export default function PlanetCard(data: data) {
       return window.alert("please select your first answer");
     }
   }
-  // console.log("hello", score);
-  //! preserving data of the last score in the local storage
-  const preScore = useRef("");
-  console.log(preScore.current);
-  useEffect(() => {
-    preScore.current = window.localStorage.getItem("lastScore");
-    console.log(preScore, "useEffect", data.data.name);
-  }, []);
-  useEffect(() => {
-    // console.log(predata, "predata");
-    window.localStorage.setItem("lastScore", `${score}`);
-    console.log(score, window.localStorage.getItem("lastScore"));
-  }, [score]);
-  // console.log(window.localStorage.getItem("lastScore"), lastScore);
   return (
     <>
       <Div className="Planet min-h-screen w-full ">
